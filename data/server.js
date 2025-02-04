@@ -204,12 +204,12 @@ app.get("/export-csv", (req, res) => {
         const csvData = json2csvParser.parse(data);
 
         // CSV faylni vaqtinchalik saqlash
-        const csvFilePath = path.join(__dirname, "train", "metadata_export.csv");
+        const csvFilePath = path.join(__dirname, "train", "metadata.csv");
         fs.writeFileSync(csvFilePath, csvData, "utf8");
 
         // Faylni yuklab olish uchun browserga qaytarish
         res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", "attachment; filename=metadata_export.csv");
+        res.setHeader("Content-Disposition", "attachment; filename=metadata.csv");
         res.send(csvData);
     } catch (error) {
         console.error("CSV yaratishda xatolik:", error);

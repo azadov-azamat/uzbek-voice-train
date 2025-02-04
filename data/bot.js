@@ -65,7 +65,7 @@ bot.start(async (ctx) => {
             // CSV dan JSON ga o'tkazish
             await convertCSVToJSON(CSV_FILE, JSON_FILE);
         }
-        
+
         ctx.reply(
             "Assalomu alaykum! Datalarni boshqarish uchun tugmalardan foydalaning:",
             Markup.keyboard([
@@ -98,13 +98,13 @@ bot.hears("CSV-ni yuklab olish", (ctx) => {
         const csvData = json2csvParser.parse(data);
 
         // CSV faylni vaqtinchalik saqlash
-        const csvFilePath = path.join(__dirname, "train", "metadata_export.csv");
+        const csvFilePath = path.join(__dirname, "train", "metadata.csv");
         fs.writeFileSync(csvFilePath, csvData, "utf8");
 
         // CSV faylni foydalanuvchiga yuborish
         ctx.replyWithDocument({
             source: csvFilePath,
-            filename: "metadata_export.csv"
+            filename: "metadata.csv"
         });
     } catch (error) {
         console.error("CSV faylni yaratishda xatolik:", error);
