@@ -75,6 +75,9 @@ app.use(bodyParser.json());
 app.use(cors());
 // Endpointlar
 
+app.get("/health", (req, res) => {
+    res.sendStatus(200);
+})
 // 1. GET /data - Barcha ma'lumotlarni qaytaradi
 app.get("/data", (req, res) => {
     const { page = 1, limit = 10 } = req.query; // Default qiymatlar: page=1, limit=10
