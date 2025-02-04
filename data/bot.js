@@ -151,6 +151,7 @@ bot.on("text", async (ctx) => {
 
         writeJSON(updatedData);
 
+        ctx.deleteMessage();
         // O'zgartirish muvaffaqiyatli bo'lgan xabar bilan "Keyingisi" tugmasi
         ctx.reply(
             `ID ${editId} uchun matn muvaffaqiyatli o'zgartirildi!`,
