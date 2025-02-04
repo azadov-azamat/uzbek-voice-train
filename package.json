@@ -1,0 +1,28 @@
+{
+  "name": "uzbek_voice",
+  "version": "1.0.0",
+  "description": "This dataset contains audio recordings and their corresponding transcriptions.",
+  "main": "server.js",
+  "scripts": {
+    "start:server": "node data/server.js",
+    "start:bot": "node data/bot.js",
+    "start:all": "concurrently \"npm run start:server\" \"npm run start:bot\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.3.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
